@@ -24,15 +24,21 @@
     if(planeta == 1){
     //aplciar la formula para el calculo del peso en marte
     peso_final = peso * g_marte / g_tierra;
-    }else{
+    peso_final = parseInt(peso_final);
+    document.write("Tu peso en marte es: <strong>" + peso_final + " Kilos</strong>");
+    }else if(planeta==2){
         peso_final = peso * g_jupiter / g_tierra;
+        peso_final = parseInt(peso_final);
+        document.write("Tu peso en Jupiter es: <strong>" + peso_final + " Kilos</strong>");
+    }else{
+        document.write("<h1><strong>Tu peso de viveza es de 10000 Kilos</strong></h1>")
     }
 
-    peso_final = parseInt(peso_final);
+    
     
     /*peso_final = parseFloat(peso_final);*/
     //se imprime el resultado en pantalla
-    document.write("Tu peso en Marte es: <strong>" + peso_final + " Kilos</strong>");
+    
     </script>
 </body>
 </html>
