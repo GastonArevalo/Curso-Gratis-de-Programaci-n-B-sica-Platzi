@@ -34,4 +34,5 @@ function dibujoPorClick()
 {
     var x = texto.value;
     alert("funka " + x);
+    console.log(texto);
 }
