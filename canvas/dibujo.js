@@ -3,6 +3,7 @@ var boton = document.getElementById("botoncito");
 boton.addEventListener("click", dibujoPorClick); //detecta evento por click
 //configuracion del dibujo curva de canvas
 var d = document.getElementById("dibujito"); //se importa el tamanño del canvas
+var ancho = d.width;
 var lienzo = d.getContext("2d"); //se establece que el lienzo va a ser en 2 dimensiones
 var lineas = 0; // cantidad de lineas que va a conformar el dibujo de la curva
 var l = 0;  //inicializa la variable previo al bucle
@@ -27,10 +28,10 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 function dibujoPorClick()
 {
     var lineas = parseInt(texto.value);
-    console.log(texto.value);
+    var espacio = ancho / lineas;
     while (l<lineas){
-        yi = 10 * l;
-        xf = 10 * (l +1);
+        yi = espacio * l;
+        xf = espacio * (l +1);
         dibujarLinea("#AAF", 0, yi, xf, 300);
         console.log("Linea " + l);
         l++;
