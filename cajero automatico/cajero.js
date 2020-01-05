@@ -32,13 +32,14 @@
      }
      if(dinero > 0)
      {
-         document.write("soy un cajero pobre y no tengo dinero");
+         
+         resultado.innerHTML = "soy un cajero malo, he sido malo no puedo darte esa cantidad de dinero";
      }
      else
      {
         for(var e of entregado)
         {
-          document.write(e.cantidad + " billetes de $" + e.valor + "</br>");
+            resultado.innerHTML = resultado.innerHTML + e.cantidad + " billetes de $" + e.valor + "</br>";
         }
      }
      
@@ -46,12 +47,14 @@
 //creacion de la variable caja la cual va a contener los datos de los billetes
  var caja = [];
  var entregado = []; //coleccion de billetes que entrego al usuario
- caja.push(new Billete(50, 10) );
- caja.push(new Billete(20, 10) );
- caja.push(new Billete(10, 10) );
+ caja.push( new Billete(100, 5) );
+ caja.push( new Billete(50, 10) );
+ caja.push( new Billete(20, 10) );
+ caja.push( new Billete(10, 10) );
+ caja.push( new Billete(5, 5) );
  var dinero = 0;
  var div = 0; //resultado de la division
  var papeles = 0; //cantidad de papeles
-
+ var resultado = document.getElementById("resultado"); 
  var b = document.getElementById("extraer"); //boton en extraer
  b.addEventListener("click", entregarDinero);//a la espera del click para ejecutar la funcion
